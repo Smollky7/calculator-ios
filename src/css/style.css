@@ -1,0 +1,239 @@
+:root {
+    --color-background: #000000;
+    --color-text: #ffffff;
+    --color-number: #2d2d2d;
+    --color-operator: #f98d00;
+    --color-clear: #9c9c9c;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  
+  body {
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--color-text);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #333;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    list-style: none;
+  }
+
+  .nav {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  @media only screen and (max-width: 460px) {
+    .nav {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 460px) {
+    .app {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--color-background);
+    }
+  }
+  
+  .calculator {
+    height: 75rem;
+    width: 42rem;
+    background: var(--color-background);
+    margin: 6rem auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    padding: 1.6rem;
+    border-radius: 3%;
+  }
+  @media only screen and (max-width: 460px) {
+    .calculator {
+      width: 100vw;
+      margin: 0;
+      max-height: 100vh;
+      justify-content: center;
+    }
+  }
+  
+  .display {
+    font-weight: 100;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex: 0 30%;
+  }
+  @media only screen and (max-width: 460px) {
+    .display {
+      flex: 0 25%;
+    }
+  }
+  .display__current {
+    flex: 75%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 11rem;
+  }
+  @media only screen and (max-width: 460px) {
+    .display__current {
+      font-size: 9rem;
+    }
+  }
+  .display__total {
+    flex: 25%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  @media only screen and (max-width: 460px) {
+    .display__total {
+      display: none;
+    }
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .buttons {
+    font-size: 3.5rem;
+    display: flex;
+    flex: 0 70%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media only screen and (max-width: 460px) {
+    .buttons {
+      font-size: 3rem;
+      flex: 0 75%;
+    }
+  }
+  .buttons__btn {
+    width: 9rem;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .buttons__btn:not(:last-child) {
+    margin-right: 1.3rem;
+  }
+  .buttons__btn:hover {
+    opacity: 0.9;
+  }
+  
+  .btn--number, .btn--grey {
+    background: var(--color-number);
+  }
+  .btn--operator {
+    background: var(--color-operator);
+  }
+  .btn--clear {
+    background: var(--color-clear);
+    color: var(--color-background);
+  }
+  
+  .width-50 {
+    flex: 50%;
+    border-radius: 10rem;
+  }
+  
+  .glow-fade-number {
+    -webkit-animation: glow-fade-number 1s;
+            animation: glow-fade-number 1s;
+  }
+  
+  .glow-fade-operator {
+    -webkit-animation: glow-fade-operator 1s;
+            animation: glow-fade-operator 1s;
+  }
+  
+  .glow-fade-clear {
+    -webkit-animation: glow-fade-clear 1s;
+            animation: glow-fade-clear 1s;
+  }
+  
+  @-webkit-keyframes glow-fade-number {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-number);
+    }
+  }
+  
+  @keyframes glow-fade-number {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-number);
+    }
+  }
+  @-webkit-keyframes glow-fade-operator {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-operator);
+    }
+  }
+  @keyframes glow-fade-operator {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-operator);
+    }
+  }
+  @-webkit-keyframes glow-fade-clear {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-clear);
+    }
+  }
+  @keyframes glow-fade-clear {
+    0% {
+      background-color: #dedede;
+    }
+    100% {
+      background-color: var(--color-clear);
+    }
+  }
